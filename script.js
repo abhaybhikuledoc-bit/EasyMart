@@ -3,7 +3,7 @@
 // ================================
  
 // Your working Google Apps Script Web App URL
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbymElem-LeMsJ6bkkuvYPgpLwKss2Sy_Z8SWuizztncS8tI5krpqpsTOGRL…";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbymElem-LeMsJ6bkkuvYPgpLwKss2Sy_Z8SWuizztncS8tI5krpqpsTOGRLT3rG6aqq/exec";
  
 // ================================
 // PRODUCTS
