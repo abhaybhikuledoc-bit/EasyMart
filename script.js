@@ -34,8 +34,7 @@ const products = [
         specifications: [
             "Material: Engineered Wood",
             "Suitable for: Home, Study & Office",
-            "Assembly: Required",
-            "Storage: Available",
+            "Assembly: Not Required",
             "Finish: Wooden Finish"
         ],
  
@@ -100,7 +99,26 @@ const products = [
         description:
             "Compact mobile stand."
     }
- 
+ {
+  id: "EM005",
+  name: "Study Table (Kitty)",
+  price: 349,
+  mrp: 439,
+  images: [
+    "images/product-5.jpg"
+  ],
+  image: "images/product-5.jpg",
+  stock: "In Stock",
+  description: "Simple, strong and useful study table/Laptop/Foldable and Protable suitable for students, home study and office work.",
+  specifications: [
+    "Material: Engineered Wood & Rubber",
+    "Suitable for: Home",
+    "Finish: Wooden Finish"
+  ],
+  size: "Approx. 100 × 50 × 75 cm",
+  colour: "Black/Pink",
+  delivery: "Delivery available. Estimated delivery will be shown during checkout."
+}
 ];
  
  
