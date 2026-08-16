@@ -788,3 +788,45 @@ function openOrderTracking() {
 displayProducts();
  
 updateCart();
+// ================================
+// UPI PAYMENT
+// ================================
+ 
+const paymentMethod = document.getElementById("paymentMethod");
+const upiPaymentBox = document.getElementById("upiPaymentBox");
+const upiPayButton = document.getElementById("upiPayButton");
+ 
+if (paymentMethod) {
+ 
+  paymentMethod.addEventListener("change", function () {
+ 
+    if (this.value === "UPI / Online Payment") {
+ 
+      upiPaymentBox.style.display = "block";
+ 
+      const total = cart.reduce(
+        (sum, item) => sum + item.price * item.quantity,
+        0
+      );
+ 
+      const upiLink =
+        "upi://pay" +
+        "?pa=8956802048@ptyes" +
+        "&pn=EasyMart" +
+        "&am=" + total.toFixed(2) +
+        "&cu=INR" +
+        "&tn=EasyMart%20Order";
+ 
+      upiPayButton.href = upiLink;
+ 
+    } else {
+ 
+      upiPaymentBox.style.display = "none";
+ 
+      upiPayButton.href = "#";
+ 
+    }
+ 
+  });
+ 
+}
