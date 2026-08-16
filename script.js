@@ -589,94 +589,150 @@ function closeCheckout() {
 // ================================
 // PLACE ORDER
 // ================================
+document.getElementById("orderForm")
+.addEventListener("submit", async function(event) {
  
-document.getElementById("orderForm").addEventListener(
-  "submit",
-  async function (event) {
+  event.preventDefault();
  
-    event.preventDefault();
+  if (cart.length === 0) {
+    alert("Your cart is empty.");
+    return;
+  }
  
-    if (cart.length === 0) {
-      alert("Your cart is empty.");
-      return;
-    }
+  const submitButton = this.querySelector(
+    "button[type='submit']"
+  );
  
-    const submitButton = this.querySelector(
-      "button[type='submit']"
+  const paymentMethod =
+    document.getElementById("paymentMethod").value;
+ 
+  const upiTransactionId =
+    document.getElementById("upiTransactionId").value.trim();
+ 
+  // ================================
+  // UPI PAYMENT CHECK
+  // ================================
+ 
+  if (
+    paymentMethod === "UPI / Online Payment" &&
+    upiTransactionId === ""
+  ) {
+ 
+    alert(
+      "⚠️ Please complete your UPI payment and enter the UPI Transaction ID before placing the order."
     );
  
-    submitButton.disabled = true;
-    submitButton.textContent = "Sending Order...";
+    return;
+  }
  
-    const formData = new FormData(this);
+  submitButton.disabled = true;
+  submitButton.textContent = "Sending Order...";
  
-    // Generate Order ID
-    const orderId = "EM" + Date.now();
+  const formData = new FormData(this);
  
-    // Product information
-    const product = cart
-      .map(item => `${item.name} × ${item.quantity}`)
-      .join(", ");
+  // ================================
+  // GENERATE ORDER ID
+  // ================================
  
-    // Total quantity
-    const quantity = cart.reduce(
-      (sum, item) => sum + item.quantity,
-      0
-    );
+  const orderId = "EM" + Date.now();
  
-    // Total amount
-    const total = cart.reduce(
-      (sum, item) => sum + item.price * item.quantity,
-      0
-    );
+  // ================================
+  // PRODUCT INFORMATION
+  // ================================
  
-    // Add order information
-    formData.append("orderId", orderId);
-    formData.append("product", product);
-    formData.append("quantity", quantity);
-    formData.append("total", total);
+  const product = cart.map(
+    item => `${item.name} × ${item.quantity}`
+  ).join(", ");
  
-    try {
+  // ================================
+  // TOTAL QUANTITY
+  // ================================
  
-      await fetch(SCRIPT_URL, {
+  const quantity = cart.reduce(
+    (sum, item) => sum + item.quantity,
+    0
+  );
+ 
+  // ================================
+  // TOTAL AMOUNT
+  // ================================
+ 
+  const total = cart.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
+ 
+  // ================================
+  // ADD ORDER INFORMATION
+  // ================================
+ 
+  formData.append("orderId", orderId);
+  formData.append("product", product);
+  formData.append("quantity", quantity);
+  formData.append("total", total);
+ 
+  // Add UPI transaction ID
+  formData.append(
+    "upiTransactionId",
+    upiTransactionId
+  );
+ 
+  try {
+ 
+    const response = await fetch(
+      SCRIPT_URL,
+      {
         method: "POST",
         mode: "no-cors",
         body: new URLSearchParams(formData)
-      });
+      }
+    );
  
-      // Show success message
-      document.getElementById("successOrderId").textContent = orderId;
+    // ================================
+    // SHOW SUCCESS MESSAGE
+    // ================================
  
-      // Clear cart
-      cart = [];
-      updateCart();
+    document
+      .getElementById("successOrderId")
+      .textContent = orderId;
  
-      // Reset form
-      this.reset();
+    // Clear cart
+    cart = [];
+    updateCart();
  
-      closeCheckout();
+    // Reset form
+    this.reset();
  
-      document
-        .getElementById("successModal")
-        .classList.add("show");
+    // Hide checkout
+    closeCheckout();
  
-    } catch (error) {
+    // Hide UPI section
+    document.getElementById(
+      "upiPaymentBox"
+    ).style.display = "none";
  
-      console.error(error);
+    // Show success popup
+    document
+      .getElementById("successModal")
+      .classList.add("show");
  
-      document
-        .getElementById("orderMessage")
-        .textContent =
-        "❌ Order could not be sent. Please try again.";
+  } catch (error) {
  
-    } finally {
+    console.error(error);
  
-      submitButton.disabled = false;
-      submitButton.textContent = "Place Order";
+    document
+      .getElementById("orderMessage")
+      .textContent =
+      "❌ Order could not be sent. Please try again.";
  
-    }
+  } finally {
+ 
+    submitButton.disabled = false;
+    submitButton.textContent = "Place Order";
+ 
   }
-);
+ 
+});
  
  
 // ================================
