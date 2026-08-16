@@ -15,13 +15,11 @@ const products = [
         id: "EM001",
         name: "Study Table",
  
-        price: 309,
+        price: 349,
         mrp: 499,
  
         images: [
             "images/product-1.jpg",
-            "images/product-1-2.jpg",
-            "images/product-1-3.jpg"
         ],
  
         image: "images/product-1.jpg",
@@ -33,14 +31,14 @@ const products = [
  
         specifications: [
             "Material: Engineered Wood",
-            "Suitable for: Home, Study & Office",
+            "Suitable for: Kidas Study",
             "Assembly: Not Required",
-            "Finish: Wooden Finish"
+            "Finish: A to Z alphabet"
         ],
  
         size: "Approx. 100 × 50 × 75 cm",
  
-        colour: "Brown",
+        colour: "Pink & White ",
  
         delivery:
             "Delivery available. Estimated delivery will be shown during checkout."
