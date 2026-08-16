@@ -590,180 +590,93 @@ function closeCheckout() {
 // PLACE ORDER
 // ================================
  
-document
-    .getElementById("orderForm")
-    .addEventListener(
-        "submit",
-        async function(event) {
- 
-            event.preventDefault();
- 
- 
-            if (cart.length === 0) {
- 
-                alert("Your cart is empty.");
- 
-                return;
-            }
- 
- 
-            const submitButton =
-                this.querySelector(
-                    "button[type='submit']"
-                );
- 
- 
-            submitButton.disabled = true;
- 
-            submitButton.textContent =
-                "Sending Order...";
- 
- 
-            const formData =
-                new FormData(this);
- 
- 
-            // Generate Order ID
- 
-            const orderId =
-                "EM" + Date.now();
- 
- 
-            // Product information
- 
-            const product =
-                cart.map(
-                    item =>
-                        `${item.name} × ${item.quantity}`
-                ).join(", ");
- 
- 
-            // Total quantity
- 
-            const quantity =
-                cart.reduce(
-                    (sum, item) =>
-                        sum + item.quantity,
-                    0
-                );
- 
- 
-            // Total amount
- 
-            const total =
-                cart.reduce(
-                    (sum, item) =>
-                        sum + item.price * item.quantity,
-                    0
-                );
- 
- 
-            // Add order information
- 
-            formData.append(
-                "orderId",
-                orderId
-            );
- 
-            formData.append(
-                "product",
-                product
-            );
- 
-            formData.append(
-                "quantity",
-                quantity
-            );
- 
-            formData.append(
-                "total",
-                total
-            );
- 
- 
-           try {
-  const response = await fetch(SCRIPT_URL, {
-    method: "POST",
-    mode: "no-cors",
-    body: new URLSearchParams(formData)
-  });
- 
-  alert("✅ Order received successfully!");
- 
-  // Close/reset the order form if your existing code does this
-}
-catch (error) {
-  console.error(error);
-  alert("❌ Order could not be sent. Please try again.");
-}
- 
- 
-                const result =
-                    await response.text();
- 
- 
-                if (!response.ok) {
- 
-                    throw new Error(result);
- 
-                }
- 
- 
-                // Show success message
- 
-                document
-                    .getElementById(
-                        "successOrderId"
-                    )
-                    .textContent =
-                    orderId;
- 
- 
-                // Clear cart
- 
-                cart = [];
- 
-                updateCart();
- 
- 
-                // Reset form
- 
-                this.reset();
- 
- 
-                closeCheckout();
- 
- 
-                document
-                    .getElementById(
-                        "successModal"
-                    )
-                    .classList.add("show");
- 
- 
-            } catch (error) {
- 
-                console.error(error);
- 
-                document
-                    .getElementById(
-                        "orderMessage"
-                    )
-                    .textContent =
-                    "❌ Order could not be sent. Please try again.";
- 
- 
-            } finally {
- 
-                submitButton.disabled = false;
- 
-                submitButton.textContent =
-                    "Place Order";
- 
-            }
- 
-        }
+document.getElementById("orderForm").addEventListener(
+  "submit",
+  async function (event) {
+ 
+    event.preventDefault();
+ 
+    if (cart.length === 0) {
+      alert("Your cart is empty.");
+      return;
+    }
+ 
+    const submitButton = this.querySelector(
+      "button[type='submit']"
     );
+ 
+    submitButton.disabled = true;
+    submitButton.textContent = "Sending Order...";
+ 
+    const formData = new FormData(this);
+ 
+    // Generate Order ID
+    const orderId = "EM" + Date.now();
+ 
+    // Product information
+    const product = cart
+      .map(item => `${item.name} × ${item.quantity}`)
+      .join(", ");
+ 
+    // Total quantity
+    const quantity = cart.reduce(
+      (sum, item) => sum + item.quantity,
+      0
+    );
+ 
+    // Total amount
+    const total = cart.reduce(
+      (sum, item) => sum + item.price * item.quantity,
+      0
+    );
+ 
+    // Add order information
+    formData.append("orderId", orderId);
+    formData.append("product", product);
+    formData.append("quantity", quantity);
+    formData.append("total", total);
+ 
+    try {
+ 
+      await fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        body: new URLSearchParams(formData)
+      });
+ 
+      // Show success message
+      document.getElementById("successOrderId").textContent = orderId;
+ 
+      // Clear cart
+      cart = [];
+      updateCart();
+ 
+      // Reset form
+      this.reset();
+ 
+      closeCheckout();
+ 
+      document
+        .getElementById("successModal")
+        .classList.add("show");
+ 
+    } catch (error) {
+ 
+      console.error(error);
+ 
+      document
+        .getElementById("orderMessage")
+        .textContent =
+        "❌ Order could not be sent. Please try again.";
+ 
+    } finally {
+ 
+      submitButton.disabled = false;
+      submitButton.textContent = "Place Order";
+ 
+    }
+  }
+);
  
  
 // ================================
