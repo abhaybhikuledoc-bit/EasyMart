@@ -148,15 +148,46 @@
  
                 <label>Payment Method</label>
  
-                <select name="paymentMethod">
+<select name="paymentMethod" id="paymentMethod">
+  <option value="Cash on Delivery">
+    Cash on Delivery
+  </option>
  
-                    <option value="Cash on Delivery">
-                        Cash on Delivery
-                    </option>
+  <option value="UPI / Online Payment">
+    UPI / Online Payment
+  </option>
+</select>
  
-                    <option value="UPI / Online Payment">
-                        UPI / Online Payment
-                    </option>
+<!-- UPI PAYMENT DETAILS -->
+<div id="upiPaymentBox" style="display: none;">
+ 
+  <h3>💳 Pay Online with UPI</h3>
+ 
+  <p>
+    UPI ID:
+    <strong>8956802048@ptyes</strong>
+  </p>
+ 
+  <p>
+    Complete the payment using your UPI app.
+  </p>
+ 
+  <a id="upiPayButton" href="#">
+    💰 Pay via UPI
+  </a>
+ 
+  <label for="upiTransactionId">
+    UPI Transaction ID
+  </label>
+ 
+  <input
+    type="text"
+    id="upiTransactionId"
+    name="upiTransactionId"
+    placeholder="Enter UPI transaction ID"
+  >
+ 
+</div>
  
                 </select>
  
