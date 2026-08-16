@@ -98,7 +98,7 @@ const products = [
  
         description:
             "Compact mobile stand."
-    }
+    },
  {
   id: "EM005",
   name: "Study Table (Kitty)",
@@ -121,8 +121,7 @@ const products = [
   delivery: "Delivery available. Estimated delivery will be shown during checkout."
 }
 ];
- 
- 
+  
 // ================================
 // CART
 // ================================
