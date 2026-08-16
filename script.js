@@ -109,10 +109,11 @@ const products = [
   ],
   image: "images/product-5.jpg",
   stock: "In Stock",
-  description: "Simple, strong and useful study table/Laptop/Foldable and Protable suitable for students, home study and office work.",
+  description: "Simple, strong and useful foldable and portable study table suitable for students, laptops, home study and office work.",
   specifications: [
     "Material: Engineered Wood & Rubber",
-    "Suitable for: Home",
+    "Suitable for: Home, Study & Laptop Use",
+    "Type: Foldable & Portable",
     "Finish: Wooden Finish"
   ],
   size: "Approx. 100 × 50 × 75 cm",
