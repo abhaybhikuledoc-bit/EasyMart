@@ -681,19 +681,21 @@ document
             );
  
  
-            try {
+           try {
+  const response = await fetch(SCRIPT_URL, {
+    method: "POST",
+    mode: "no-cors",
+    body: new URLSearchParams(formData)
+  });
  
-                const response =
-                    await fetch(
-                        SCRIPT_URL,
-                        {
-                            method: "POST",
-                            body:
-                                new URLSearchParams(
-                                    formData
-                                )
-                        }
-                    );
+  alert("✅ Order received successfully!");
+ 
+  // Close/reset the order form if your existing code does this
+}
+catch (error) {
+  console.error(error);
+  alert("❌ Order could not be sent. Please try again.");
+}
  
  
                 const result =
