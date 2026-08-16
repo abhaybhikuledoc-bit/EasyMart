@@ -46,9 +46,10 @@ const products = [
  
     {
         id: "EM002",
-        name: "LED Light",
+        name: "Body Massager Gun",
  
-        price: 199,
+        price: 549,
+        mrp: 699,
  
         images: [
             "images/product-2.jpg"
@@ -57,16 +58,26 @@ const products = [
         image: "images/product-2.jpg",
  
         stock: "In Stock",
- 
-        description:
-            "Energy-saving LED light."
-    },
+  description: "Portable body massage gun designed for relaxation and everyday muscle massage at home, gym or after exercise.",
+  specifications: [
+    "Type: Electric Massage Gun",
+    "Suitable for: Body & Muscle Massage",
+    "Operation: Rechargeable/ 5500 Mah Battry",
+    "Speed Levels: 6 speed Intensities",
+    "Massage Heads: Multiple",
+    "Usage: Home, Gym & Travel"
+  ],
+  size: "Compact & Portable",
+  colour: "Black & Multicolor",
+  delivery: "Delivery available. Estimated delivery will be shown during checkout."
+},
  
     {
         id: "EM003",
-        name: "Kitchen Organizer",
+        name: "Back Scrubber & Bath Belt for Men & Women",
  
-        price: 249,
+        price: 119,
+  mrp: 139,
  
         images: [
             "images/product-3.jpg"
@@ -76,15 +87,26 @@ const products = [
  
         stock: "In Stock",
  
-        description:
-            "Useful kitchen storage organizer."
-    },
+        description: "Double-sided bath scrubber belt designed for easy cleaning and exfoliation of the back and body. Suitable for both men and women.",
+  specifications: [
+    "Type: Back Scrubber & Bath Belt",
+    "Suitable for: Men & Women",
+    "Material: Soft & Durable Bath Material",
+    "Usage: Bathing & Body Cleaning",
+    "Design: Double-Sided Scrubbing Surface",
+    "Easy to Hold & Use"
+  ],
+  size: "Approx. 90 × 10 cm",
+  colour: "Multicolour",
+  delivery: "Delivery available. Estimated delivery will be shown during checkout."
+},
  
     {
         id: "EM004",
-        name: "Mobile Stand",
+        name: "Swing Chair for Baby",
  
-        price: 149,
+         price: 288,
+  mrp: 379,
  
         images: [
             "images/product-4.jpg"
@@ -94,9 +116,18 @@ const products = [
  
         stock: "In Stock",
  
-        description:
-            "Compact mobile stand."
-    },
+        description: "Comfortable cotton swing chair designed for 1-5 Years kids. Suitable for indoor & Outdoor use and supervised play.",
+  specifications: [
+    "Type: Baby Swing / Cotton Swing Chair",
+    "Suitable for: 1-5 Years kids",
+    "Material: Cotton",
+    "Usage: Indoor & Outdoor",
+    "Design: Comfortable & Portable"
+  ],
+  size: "As per product design",
+  colour: "Multicolour",
+  delivery: "Delivery available. Estimated delivery will be shown during checkout."
+},
  {
   id: "EM005",
   name: "Study Table (Kitty)",
