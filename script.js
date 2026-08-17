@@ -237,7 +237,7 @@ const products = [
         "images/product-8.1.jpg"
     ],
  
-    image: "images/product-4.jpg",
+    image: "images/product-9.jpg",
  
     stock: "In Stock",
  
@@ -253,6 +253,84 @@ const products = [
         warranty: "1 Year",
     }
 },
+ {
+    id: "EM009",
+    displayOrder: 9,
+ 
+    name: "Trendy Accessories for Girls – 12 Items Gift Combo",
+ 
+    price: 489,       
+    mrp: 599,        
+ 
+    images: [
+        "images/product-9.jpg",
+        "images/product-9.1.jpg"
+    ],
+ 
+    image: "images/product-9.jpg",
+ 
+    stock: "In Stock",
+ 
+    description: `
+        Stylish 12-item gifting combo specially curated for girls.
+        Perfect for birthdays, surprises and special occasions.
+ 
+        Includes trendy accessories such as hair bow, hair bands,
+        butterfly chain pendant, small cluters, earrings, big hair
+        cluter, scrunchies, bracelet, keychain, artificial nails,
+        anti-tarnish heart chain pendant and necklace.
+ 
+        Colours and designs may vary depending on availability.
+    `,
+ 
+    category: "Gift Combo",
+    idealFor: "Girls",
+    contents: 12,
+    warranty: "6 Month",
+    Return: "6 to 7 Days"
+},
+ {
+  id: "EM010",
+  displayOrder: 10,
+ 
+  name: "Cute Gift Hamper for Girl",
+ 
+  price: 224,
+  mrp: 278,   
+ 
+  images: [
+    "images/product-10.jpg",
+    "images/product-10.1.jpg",
+   "images/product-10.2.jpg"
+  ],
+ 
+  image: "images/product-10.jpg",
+ 
+  stock: "In Stock",
+ 
+  category: "Gifts & Accessories",
+  type: "Girl Accessories",
+ 
+  material: "Fabric",
+  size: "Free Size",
+  quantity: 1,
+ 
+  description:
+    "Premium Gift Combo for Girls featuring a stylish necklace, earrings, bracelet, satin scrunchie, clutcher, hair bow and teddy keychain.A beautiful and thoughtful gift set for birthdays, celebrations and special occasions. Colours and designs may vary depending on availability.",
+ 
+  features: [
+     "Premium Necklace",
+  "Premium Pair of Earrings",
+  "Premium Bracelet",
+  "Premium Satin Scrunchie",
+  "Premium Clutcher",
+  "Premium Hair Bow",
+  "Premium Teddy Keychain",
+  "Perfect for gifting",
+    "Elegant and trendy design",
+    "Suitable for gifting",
+  ]
+  },
 ];
   
 // ================================
