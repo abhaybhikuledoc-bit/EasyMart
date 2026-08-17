@@ -187,6 +187,72 @@ const products = [
  
     delivery: "Delivery available. Estimated delivery will be shown during checkout."
 },
+ {
+    id: "EM007",
+    displayOrder: 1,
+ 
+    name: "Rakhi for Brother with Printed Ceramic Mug Combo Pack of 3+1 Gift",
+ 
+    price: 248,
+    mrp: 287,
+ 
+    images: [
+        "images/product-7.jpg",
+     "images/product-7.1.jpg",
+        "images/product-7.2.jpg"
+    ],
+ 
+    image: "images/product-7.jpg",
+ 
+    stock: "In Stock",
+ 
+    description:
+        "Beautiful Raksha Bandhan combo gift for brother featuring a stylish Rakhi, printed ceramic mug and greeting card. A perfect gift for celebrating the special bond between brother and sister.",
+ 
+    specifications: [
+        "Product Type: Rakhi Gift Combo",
+        "Pack: 4 Pieces",
+      "Includes: Rakhi + Printed Ceramic Mug + Greeting Card and related Raksha Bandhan items",
+        "Material: Ceramic Mug & Thread Rakhi",
+        "Colour: Multicolor",
+        "Occasion: Raksha Bandhan",
+        "Suitable For: Brother"
+    ],
+ 
+    size: "Standard size",
+    colour: "Multicolor",
+ 
+    delivery:
+        "Delivery available. Estimated delivery will be shown during checkout."
+},
+ {
+    id: "EM008",
+    displayOrder: 8,
+    name: "Gift Combo for Girls",
+    price: 299,
+    mrp: 499,
+ 
+    images: [
+        "images/product-8.jpg",
+        "images/product-8.1.jpg"
+    ],
+ 
+    image: "images/product-4.jpg",
+ 
+    stock: "In Stock",
+ 
+    description:
+        "A special gift combo for Girls . A thoughtful and attractive gifting set for celebrating the bond .",
+ 
+    category: "Gifts",
+ 
+    details: {
+        type: "Gift Combo",
+      "Pack: 8 Pieces",
+        contents: "Gift Combo Set",
+        warranty: "1 Year",
+    }
+},
 ];
   
 // ================================
