@@ -248,7 +248,7 @@ const products = [
  
     details: {
         type: "Gift Combo",
-      "Pack: 8 Pieces",
+      Pack: "8 Pieces",
         contents: "Gift Combo Set",
         warranty: "1 Year",
     }
