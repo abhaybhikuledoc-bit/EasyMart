@@ -153,7 +153,40 @@ const products = [
   size: "Approx. 100 × 50 × 75 cm",
   colour: "Black/Pink",
   delivery: "Delivery available. Estimated delivery will be shown during checkout."
-}
+},
+ {
+    id: "EM006",
+    displayOrder: 6,
+    name: "Best Bhai Tabletop Standee",
+    price: 129,
+    mrp: 157,  
+ 
+    images: [
+        "images/product-6.jpg",
+     "images/product-6.2.jpg",
+    ],
+ 
+    image: "images/product-6.jpg",
+ 
+    stock: "In Stock",
+ 
+    description: "Beautiful wooden showpiece suitable for brother gift, home decoration, living room, bedroom, office and gifting.",
+ 
+    specifications: [
+        "Material: Wood",
+        "Type: Showpiece / Collectible",
+        "Net Quantity: 1",
+        "Product Length: 6 Inch",
+        "Product Height: 6 Inch",
+        "Product Breadth: 0.5 Inch",
+    ],
+ 
+    size: "6 × 6 × 0.5 Inch",
+ 
+    colour: "As shown in product image",
+ 
+    delivery: "Delivery available. Estimated delivery will be shown during checkout."
+},
 ];
   
 // ================================
