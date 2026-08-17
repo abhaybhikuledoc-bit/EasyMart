@@ -13,6 +13,7 @@ const products = [
  
     {
         id: "EM001",
+     displayOrder: 2,
         name: "Study Table",
  
         price: 349,
@@ -46,6 +47,7 @@ const products = [
  
     {
         id: "EM002",
+     displayOrder: 4,
         name: "Body Massager Gun",
  
         price: 549,
@@ -74,6 +76,7 @@ const products = [
  
     {
         id: "EM003",
+     displayOrder: 5,
         name: "Back Scrubber & Bath Belt for Men & Women",
  
         price: 119,
@@ -103,6 +106,7 @@ const products = [
  
     {
         id: "EM004",
+     displayOrder: 3,
         name: "Swing Chair for Baby",
  
          price: 288,
@@ -130,6 +134,7 @@ const products = [
 },
  {
   id: "EM005",
+  displayOrder: 1,
   name: "Study Table (Kitty)",
   price: 349,
   mrp: 439,
@@ -176,8 +181,7 @@ function displayProducts() {
     const productGrid =
         document.getElementById("productGrid");
  
-    productGrid.innerHTML = products.map(product => `
- 
+    productGrid.innerHTML = [...products].sort((a, b) => a.displayOrder - b.displayOrder).map(product => ` 
         <div class="product-card">
  
             <!-- PRODUCT IMAGES -->
