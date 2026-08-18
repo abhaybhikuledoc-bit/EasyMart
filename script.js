@@ -487,7 +487,7 @@ const products = [
    "Occasion: Western Party, Wedding, Casual Wear",
     "Color: Gold"
   ],
-  NetQuantity: "1 Piece",
+  netQuantity: "1 Piece",
   warranty: "NO",
   delivery: "Delivery available. Estimated delivery will be shown during checkout."
 },
