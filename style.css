@@ -642,3 +642,81 @@ footer {
     font-size: 14px;
     margin-left: 8px;
 }
+/* ================================
+   EASY MART PRODUCT IMAGE SLIDER
+   ================================ */
+ 
+.image-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #ffffff;
+    border-radius: 12px;
+    touch-action: pan-y;
+}
+ 
+.slider-track {
+    display: flex;
+    width: 100%;
+    transition: transform 0.35s ease;
+}
+ 
+.slider-image {
+    min-width: 100%;
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    display: block;
+}
+ 
+/* LEFT / RIGHT BUTTONS */
+ 
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.45);
+    color: white;
+    font-size: 28px;
+    line-height: 30px;
+    cursor: pointer;
+    z-index: 5;
+}
+ 
+.slider-prev {
+    left: 8px;
+}
+ 
+.slider-next {
+    right: 8px;
+}
+ 
+/* IMAGE DOTS */
+ 
+.slider-dots {
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+ 
+.slider-dot {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin: 0 3px;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+}
+ 
+.slider-dot.active {
+    width: 18px;
+    border-radius: 8px;
+    background: #ff7a00;
+}
