@@ -737,6 +737,14 @@ function enableSwipe() {
 // FULL SCREEN IMAGE VIEWER
 // ================================
  
+let viewerProductId = null;
+let viewerImageIndex = 0;
+ 
+ 
+// ================================
+// OPEN IMAGE VIEWER
+// ================================
+ 
 function openImageViewer(productId, index) {
  
     const product = products.find(
@@ -747,10 +755,89 @@ function openImageViewer(productId, index) {
         return;
     }
  
-    console.log(
-        "Opening image:",
-        product.images[index]
+    viewerProductId = productId;
+    viewerImageIndex = index;
+ 
+    updateImageViewer();
+ 
+    document
+        .getElementById("imageViewer")
+        .classList.add("show");
+}
+ 
+ 
+// ================================
+// UPDATE VIEWER IMAGE
+// ================================
+ 
+function updateImageViewer() {
+ 
+    const product = products.find(
+        p => p.id === viewerProductId
     );
+ 
+    if (!product) {
+        return;
+    }
+ 
+    const viewerImage =
+        document.getElementById("viewerImage");
+ 
+    const viewerCounter =
+        document.getElementById("viewerCounter");
+ 
+    viewerImage.src =
+        product.images[viewerImageIndex];
+ 
+    viewerCounter.textContent =
+        (viewerImageIndex + 1) +
+        " / " +
+        product.images.length;
+}
+ 
+ 
+// ================================
+// CHANGE VIEWER IMAGE
+// ================================
+ 
+function viewerChangeImage(direction) {
+ 
+    const product = products.find(
+        p => p.id === viewerProductId
+    );
+ 
+    if (!product) {
+        return;
+    }
+ 
+    viewerImageIndex += direction;
+ 
+    if (viewerImageIndex < 0) {
+        viewerImageIndex =
+            product.images.length - 1;
+    }
+ 
+    if (
+        viewerImageIndex >=
+        product.images.length
+    ) {
+        viewerImageIndex = 0;
+    }
+ 
+    updateImageViewer();
+}
+ 
+ 
+// ================================
+// CLOSE IMAGE VIEWER
+// ================================
+ 
+function closeImageViewer() {
+ 
+    document
+        .getElementById("imageViewer")
+        .classList.remove("show");
+ 
 }
  
  
