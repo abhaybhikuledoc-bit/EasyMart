@@ -372,7 +372,7 @@ function displayProducts() {
  
                     <div class="slider-track">
  
-                        ${product.images.map(img => `
+                        ${product.images.map((img, index) => `
                             <img
                                   src="${img}"
     alt="${product.name}"
