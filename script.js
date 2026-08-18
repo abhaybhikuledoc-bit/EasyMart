@@ -384,6 +384,58 @@ const products = [
   Warranty: "1 month",
   delivery: "Delivery available. Estimated delivery will be shown during checkout."
 },
+ {
+        id: "EM013",
+     displayOrder: 13,
+        name: "Sunflower Crochet Flower Artificial",
+ 
+        price: 209,
+        mrp: 252,
+ 
+        images: [
+            "images/product-13.jpg",
+          "images/product-13.1.jpg"
+        ],
+ 
+        image: "images/product-13.jpg",
+ 
+        stock: "In Stock",
+  description: "A stylish Artificial Flora Artificial Plants for decorating your home,room,office,tables & other spaces.",
+  specifications: [
+    "Type: Artificial Flower",
+    "Number of Contents: 1 Artificial Flower / Shrub"
+  ],
+  size: "L 10 cm X H 1 cm X B 0.5 cm",
+  Warranty: "1 month",
+  delivery: "Delivery available. Estimated delivery will be shown during checkout."
+},
+ {
+        id: "EM014",
+     displayOrder: 13,
+        name: "Lord Adiyogi Backflow Incense Holder",
+ 
+        price: 225,
+        mrp: 299,
+ 
+        images: [
+            "images/product-14.jpg",
+          "images/product-14.1.jpg"
+        ],
+ 
+        image: "images/product-14.jpg",
+ 
+        stock: "In Stock",
+  description: "Enhance your home with this beautifully crafted Lord Adiyogi Backflow Incense Holder. Made from premium poly resin, it creates a mesmerizing waterfall smoke effect when used with backflow incense cones, bringing peace, positivity, and spiritual charm to any space.",
+  specifications: [
+    "Material: Poly Resin",
+   "Theme: Lord Shiva-Adiyogi",
+   "Package Includes: 1 Backflow Incense Holder",
+    "Color: Black"
+  ],
+  size: "Approx. 12 × 11 × 14.5 cm",
+  Warranty: "1 month",
+  delivery: "Delivery available. Estimated delivery will be shown during checkout."
+},
 ];
   
 // ================================
