@@ -357,6 +357,33 @@ const products = [
   colour: "Multicolor",
   delivery: "Delivery available. Estimated delivery will be shown during checkout."
 },
+ {
+        id: "EM012",
+     displayOrder: 12,
+        name: "Elegant Jewellery Combo for Girls – Necklace, Earrings & Bracelet",
+ 
+        price: 426,
+        mrp: 495,
+ 
+        images: [
+            "images/product-12.jpg",
+          "images/product-12.1.jpg",
+         "images/product-12.2.jpg"
+        ],
+ 
+        image: "images/product-12.jpg",
+ 
+        stock: "In Stock",
+  description: "A stylish 3-piece jewellery combo featuring a necklace, a pair of earrings, and a bracelet. A lovely gifting choice for girls, especially for Raksha Bandhan.",
+  specifications: [
+    "Type: Jewellery combo",
+    "Sales Package Include: 1 NECKLACE , 1 PAIR EARRING , 1 BRACELET",
+    "Number of Contents: 3"
+  ],
+  size: "Free Size",
+  Warranty: "1 month",
+  delivery: "Delivery available. Estimated delivery will be shown during checkout."
+},
 ];
   
 // ================================
