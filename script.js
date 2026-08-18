@@ -733,6 +733,25 @@ function enableSwipe() {
         });
  
 }
+// ================================
+// FULL SCREEN IMAGE VIEWER
+// ================================
+ 
+function openImageViewer(productId, index) {
+ 
+    const product = products.find(
+        p => p.id === productId
+    );
+ 
+    if (!product) {
+        return;
+    }
+ 
+    console.log(
+        "Opening image:",
+        product.images[index]
+    );
+}
  
  
 // ================================
