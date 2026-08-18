@@ -411,7 +411,7 @@ const products = [
 },
  {
         id: "EM014",
-     displayOrder: 13,
+     displayOrder: 14,
         name: "Lord Adiyogi Backflow Incense Holder",
  
         price: 225,
@@ -429,11 +429,66 @@ const products = [
   specifications: [
     "Material: Poly Resin",
    "Theme: Lord Shiva-Adiyogi",
-   "Package Includes: 1 Backflow Incense Holder",
     "Color: Black"
   ],
   size: "Approx. 12 × 11 × 14.5 cm",
   Warranty: "1 month",
+  delivery: "Delivery available. Estimated delivery will be shown during checkout."
+},
+ {
+        id: "EM015",
+     displayOrder: 15,
+        name: "Shiv Parivar Idol-Shiva Family Murti for Home Decor",
+ 
+        price: 225,
+        mrp: 299,
+ 
+        images: [
+            "images/product-15.jpg",
+          "images/product-15.1.jpg"
+        ],
+ 
+        image: "images/product-15.jpg",
+ 
+        stock: "In Stock",
+  description: "Shiv Parivar Decorative Idol | Shiva Family Murti for Home, Office, Car Dashboard & Temple Decoration.",
+  specifications: [
+    "Material: Poly Resin",
+   "Theme: Shiv Parivar",
+   "Usage: Home Decor, Pooja Room, Office Desk, Car Dashboard",
+   "Package Includes: 1 Shiva Parivar Family Idol",
+    "Color: Multi-color"
+  ],
+  size: "Approx. 12 × 16 cm",
+  Warranty: "1 month",
+  delivery: "Delivery available. Estimated delivery will be shown during checkout."
+},
+ {
+        id: "EM016",
+     displayOrder: 16,
+        name: "Elegant Korean Butterfly Pearl Hair Clip | Gold Plated Hair Accessory for Women & Girls",
+ 
+        price: 299,
+        mrp: 368,
+ 
+        images: [
+            "images/product-16.jpg",
+          "images/product-16.1.jpg"
+        ],
+ 
+        image: "images/product-16.jpg",
+ 
+        stock: "In Stock",
+  description: "Enhance your hairstyle with this stunning Korean-inspired butterfly hair clip featuring delicate pearl bead wings and elegant pearl tassel chains. Designed with a secure claw clip, this fashionable accessory adds a graceful and luxurious touch to casual, party, wedding, and festive looks.",
+  specifications: [
+    "Base Metal: Alloy",
+   "Plating: Gold Plated",
+   "Stone Type: Artificial Stones & Beads",
+   "Occasion: Western Party, Wedding, Casual Wear",
+    "Color: Gold"
+  ],
+  Net "Quantity: 1 Piece",
+  Warranty: "NO",
   delivery: "Delivery available. Estimated delivery will be shown during checkout."
 },
 ];
