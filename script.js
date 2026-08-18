@@ -187,24 +187,24 @@ const products = [
  
     delivery: "Delivery available. Estimated delivery will be shown during checkout."
 },
- {
-    id: "EM007",
-    displayOrder: 1,
- 
-    name: "Rakhi for Brother with Printed Ceramic Mug Combo Pack of 3+1 Gift",
- 
-    price: 248,
-    mrp: 287,
- 
-    images: [
-        "images/product-7.jpg",
-     "images/product-7.1.jpg",
-        "images/product-7.2.jpg"
-    ],
- 
-    image: "images/product-7.jpg",
- 
-    stock: "In Stock",
+  {
+     id: "EM007",
+     displayOrder: 1,
+  
+     name: "Rakhi for Brother with Printed Ceramic Mug Combo Pack of 3+1 Gift",
+  
+     price: 248,
+     mrp: 287,
+  
+     images: [
+         "images/product-7.jpg",
+      "images/product-7.1.jpg",
+         "images/product-7.2.jpg"
+     ],
+  
+     image: "images/product-7.jpg",
+  
+     stock: "In Stock",
  
     description:
         "Beautiful Raksha Bandhan combo gift for brother featuring a stylish Rakhi, printed ceramic mug and greeting card. A perfect gift for celebrating the special bond between brother and sister.",
@@ -355,43 +355,66 @@ function formatPrice(price) {
  
 function displayProducts() {
  
-    const productGrid =
-        document.getElementById("productGrid");
+    const productGrid = document.getElementById("productGrid");
  
-    productGrid.innerHTML = [...products].sort((a, b) => a.displayOrder - b.displayOrder).map(product => ` 
+    productGrid.innerHTML = [...products]
+        .sort((a, b) => a.displayOrder - b.displayOrder)
+        .map(product => `
+ 
         <div class="product-card">
  
             <!-- PRODUCT IMAGES -->
  
             <div class="product-images">
  
-                <img
-                    id="mainImage-${product.id}"
-                    src="${product.images[0]}"
-                    alt="${product.name}"
-                    class="main-product-image"
-                >
+                <div class="image-slider"
+                     id="slider-${product.id}">
  
-                ${
-                    product.images.length > 1
-                    ? `
-                    <div class="thumbnail-images">
+                    <div class="slider-track">
  
-                        ${product.images.map((img, index) => `
- 
+                        ${product.images.map(img => `
                             <img
                                 src="${img}"
                                 alt="${product.name}"
-                                class="product-thumbnail"
-                                onclick="changeProductImage('${product.id}', ${index})"
-                            >
- 
+                                class="slider-image">
                         `).join("")}
  
                     </div>
-                    `
-                    : ""
-                }
+ 
+                    ${
+                        product.images.length > 1
+                        ? `
+ 
+                        <button
+                            class="slider-arrow slider-prev"
+                            onclick="changeSlide('${product.id}', -1)">
+                            ‹
+                        </button>
+ 
+                        <button
+                            class="slider-arrow slider-next"
+                            onclick="changeSlide('${product.id}', 1)">
+                            ›
+                        </button>
+ 
+                        <div class="slider-dots">
+ 
+                            ${product.images.map((img, index) => `
+ 
+                                <span
+                                    class="slider-dot ${index === 0 ? "active" : ""}"
+                                    onclick="goToSlide('${product.id}', ${index})">
+                                </span>
+ 
+                            `).join("")}
+ 
+                        </div>
+ 
+                        `
+                        : ""
+                    }
+ 
+                </div>
  
             </div>
  
@@ -406,7 +429,7 @@ function displayProducts() {
             <!-- DESCRIPTION -->
  
             <p class="description">
-                ${product.description}
+                ${product.description || ""}
             </p>
  
  
@@ -415,9 +438,9 @@ function displayProducts() {
             ${
                 product.stock
                 ? `
-                <p class="stock">
-                    📦 ${product.stock}
-                </p>
+                    <p class="stock">
+                        📦 ${product.stock}
+                    </p>
                 `
                 : ""
             }
@@ -428,36 +451,36 @@ function displayProducts() {
             ${
                 product.specifications
                 ? `
-                <div class="product-details">
  
-                    <h4>
-                        📋 Specifications
-                    </h4>
+                    <div class="product-details">
  
-                    <ul>
+                        <h4>📋 Specifications</h4>
  
-                        ${product.specifications
-                            .map(spec => `<li>${spec}</li>`)
-                            .join("")}
+                        <ul>
  
-                    </ul>
+                            ${product.specifications
+                                .map(spec => `<li>${spec}</li>`)
+                                .join("")}
  
-                    <p>
-                        <strong>📏 Size:</strong>
-                        ${product.size || "Not specified"}
-                    </p>
+                        </ul>
  
-                    <p>
-                        <strong>🎨 Colour:</strong>
-                        ${product.colour || "Not specified"}
-                    </p>
+                        <p>
+                            <strong>📏 Size:</strong>
+                            ${product.size || "Not specified"}
+                        </p>
  
-                    <p>
-                        <strong>🚚 Delivery:</strong>
-                        ${product.delivery || "Delivery information available at checkout."}
-                    </p>
+                        <p>
+                            <strong>🎨 Colour:</strong>
+                            ${product.colour || "Not specified"}
+                        </p>
  
-                </div>
+                        <p>
+                            <strong>🚚 Delivery:</strong>
+                            ${product.delivery || "Delivery information available at checkout."}
+                        </p>
+ 
+                    </div>
+ 
                 `
                 : ""
             }
@@ -472,9 +495,9 @@ function displayProducts() {
                 ${
                     product.mrp
                     ? `
-                    <span class="mrp">
-                        MRP ${formatPrice(product.mrp)}
-                    </span>
+                        <span class="mrp">
+                            MRP ${formatPrice(product.mrp)}
+                        </span>
                     `
                     : ""
                 }
@@ -487,15 +510,13 @@ function displayProducts() {
             <div class="product-buttons">
  
                 <button
-                    onclick="addToCart('${product.id}')"
-                >
+                    onclick="addToCart('${product.id}')">
                     Add to Cart
                 </button>
  
                 <button
                     class="buy-button"
-                    onclick="buyNow('${product.id}')"
-                >
+                    onclick="buyNow('${product.id}')">
                     Buy Now
                 </button>
  
@@ -503,7 +524,213 @@ function displayProducts() {
  
         </div>
  
-    `).join("");
+    `)
+    .join("");
+ 
+    // Start image sliders AFTER products are created
+    initializeSliders();
+    enableSwipe();
+}
+ 
+ 
+// ================================
+// IMAGE SLIDER
+// ================================
+ 
+let sliderPositions = {};
+ 
+ 
+// ================================
+// INITIALIZE SLIDERS
+// ================================
+ 
+function initializeSliders() {
+ 
+    products.forEach(product => {
+ 
+        sliderPositions[product.id] = 0;
+ 
+    });
+ 
+}
+ 
+ 
+// ================================
+// CHANGE SLIDE
+// ================================
+ 
+function changeSlide(productId, direction) {
+ 
+    const product = products.find(
+        p => p.id === productId
+    );
+ 
+    if (!product) {
+        return;
+    }
+ 
+    let position =
+        sliderPositions[productId] || 0;
+ 
+    position += direction;
+ 
+    if (position < 0) {
+ 
+        position =
+            product.images.length - 1;
+ 
+    }
+ 
+    if (position >= product.images.length) {
+ 
+        position = 0;
+ 
+    }
+ 
+    sliderPositions[productId] = position;
+ 
+    updateSlider(productId);
+ 
+}
+ 
+ 
+// ================================
+// GO TO SPECIFIC SLIDE
+// ================================
+ 
+function goToSlide(productId, index) {
+ 
+    sliderPositions[productId] = index;
+ 
+    updateSlider(productId);
+ 
+}
+ 
+ 
+// ================================
+// UPDATE SLIDER
+// ================================
+ 
+function updateSlider(productId) {
+ 
+    const slider =
+        document.getElementById(
+            "slider-" + productId
+        );
+ 
+    if (!slider) {
+        return;
+    }
+ 
+    const position =
+        sliderPositions[productId] || 0;
+ 
+    const track =
+        slider.querySelector(
+            ".slider-track"
+        );
+ 
+    if (track) {
+ 
+        track.style.transform =
+            `translateX(-${position * 100}%)`;
+ 
+    }
+ 
+    const dots =
+        slider.querySelectorAll(
+            ".slider-dot"
+        );
+ 
+    dots.forEach((dot, index) => {
+ 
+        dot.classList.toggle(
+            "active",
+            index === position
+        );
+ 
+    });
+ 
+}
+ 
+ 
+// ================================
+// MOBILE SWIPE
+// ================================
+ 
+function enableSwipe() {
+ 
+    document
+        .querySelectorAll(".image-slider")
+        .forEach(slider => {
+ 
+            let startX = 0;
+            let endX = 0;
+ 
+ 
+            // Finger touches screen
+ 
+            slider.addEventListener(
+                "touchstart",
+                function(event) {
+ 
+                    startX =
+                        event.touches[0].clientX;
+ 
+                }
+            );
+ 
+ 
+            // Finger leaves screen
+ 
+            slider.addEventListener(
+                "touchend",
+                function(event) {
+ 
+                    endX =
+                        event.changedTouches[0].clientX;
+ 
+                    const productId =
+                        slider.id.replace(
+                            "slider-",
+                            ""
+                        );
+ 
+ 
+                    // Swipe LEFT
+                    // Next image
+ 
+                    if (
+                        startX - endX > 50
+                    ) {
+ 
+                        changeSlide(
+                            productId,
+                            1
+                        );
+ 
+                    }
+ 
+ 
+                    // Swipe RIGHT
+                    // Previous image
+ 
+                    if (
+                        endX - startX > 50
+                    ) {
+ 
+                        changeSlide(
+                            productId,
+                            -1
+                        );
+ 
+                    }
+ 
+                }
+            );
+ 
+        });
+ 
 }
  
  
