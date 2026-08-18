@@ -267,6 +267,39 @@
  
     <!-- JAVASCRIPT -->
     <script src="script.js"></script>
+ <!-- FULL SCREEN IMAGE VIEWER -->
  
+<div id="imageViewer" class="image-viewer">
+ 
+    <button
+        class="viewer-close"
+        onclick="closeImageViewer()">
+        ×
+    </button>
+ 
+    <button
+        class="viewer-prev"
+        onclick="viewerChangeImage(-1)">
+        ‹
+    </button>
+ 
+    <img
+        id="viewerImage"
+        src=""
+        alt="Product Image">
+ 
+    <button
+        class="viewer-next"
+        onclick="viewerChangeImage(1)">
+        ›
+    </button>
+ 
+    <div
+        id="viewerCounter"
+        class="viewer-counter">
+        1 / 1
+    </div>
+ 
+</div>
 </body>
 </html>
