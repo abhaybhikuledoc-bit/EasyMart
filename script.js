@@ -163,7 +163,7 @@ const products = [
  
     images: [
         "images/product-6.jpg",
-     "images/product-6.2.jpg",
+     "images/product-6.1.jpg",
     ],
  
     image: "images/product-6.jpg",
@@ -237,7 +237,7 @@ const products = [
         "images/product-8.1.jpg"
     ],
  
-    image: "images/product-9.jpg",
+    image: "images/product-8.jpg",
  
     stock: "In Stock",
  
