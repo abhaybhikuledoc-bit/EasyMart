@@ -374,9 +374,10 @@ function displayProducts() {
  
                         ${product.images.map(img => `
                             <img
-                                src="${img}"
-                                alt="${product.name}"
-                                class="slider-image">
+                                  src="${img}"
+    alt="${product.name}"
+    class="slider-image"
+    onclick="openImageViewer('${product.id}', ${index})">
                         `).join("")}
  
                     </div>
