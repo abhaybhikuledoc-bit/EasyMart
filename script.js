@@ -331,6 +331,32 @@ const products = [
     "Suitable for gifting",
   ]
   },
+ {
+        id: "EM011",
+     displayOrder: 11,
+        name: "Diva Elegant Rakhi-Set of 3",
+ 
+        price: 233,
+        mrp: 265,
+ 
+        images: [
+            "images/product-11.jpg",
+          "images/product-11.1.jpg"
+        ],
+ 
+        image: "images/product-11.jpg",
+ 
+        stock: "In Stock",
+  description: "3 set of Rakhi Fancy design| Rakhi Gift For Brother/Sister | Best Rakhi For Bhai | Stylish Rakhi Set| New Fancy Rakhi Combo.",
+  specifications: [
+    "Type: Rakhi Set",
+    "Material: Alloy",
+    "Quantity: 3 Rakhis"
+  ],
+  size: "Free Size",
+  colour: "Multicolor",
+  delivery: "Delivery available. Estimated delivery will be shown during checkout."
+},
 ];
   
 // ================================
